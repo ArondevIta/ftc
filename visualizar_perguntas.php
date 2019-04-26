@@ -18,7 +18,7 @@
 			require_once('conexao.php');
 
 
-			$comando	=	"select * from pergunta";
+			$comando	=	"select * from pergunta order by id_cat asc";
 			$execComando	=	mysqli_query($conexao,$comando);
 
 			if($execComando){

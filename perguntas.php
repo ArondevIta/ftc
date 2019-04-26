@@ -27,9 +27,32 @@
 </head>
 <body>
 
-		
+<?php 
+
+  	$emailLogado = $_SESSION["email"];
+  	$aula = mysqli_query($conexao,"select aula FROM aluno WHERE nome='$emailLogado' ");
+
+  	while($retornaAula	=	mysqli_fetch_array($aula)){
+  		$auxAula = $retornaAula['aula'];
+  		$auxAula = intval($auxAula);
+  	}
+  	$cout = mysqli_query($conexao, "select count(*) from pergunta where id_cat=$auxAula");
+  	while($retornaCount	=	mysqli_fetch_array($cout)){
+  		$auxCount = $retornaCount['count(*)'];
+  		$auxCount = intval($auxCount);
+  	}
+  	
+
+
+	if ($auxCount < 4) {
+		echo "<META HTTP-EQUIV=REFRESH CONTENT = '0; URL=painel.php'>
+			<script type=\"text/javascript\">
+				alert(\"A aula ainda não está liberada. \")
+			</script>";
+	}else{ 
+?>
 	<div class="container">
-				<form method="POST" action="resultado.php">		
+		<form method="POST" action="resultado.php">		
 			<br>
 			<h5>perguntas</h5>
 			<p>
@@ -46,9 +69,9 @@
 						$contaAula = $retornaUserLogAula['aula'];
 
 						
-							$pergunta 	= "select * from pergunta where id_cat='$idCategoria'"; //comando para pegar as perguntas
-					$retornapergunta	=	mysqli_query($conexao, $pergunta); //executa o comando acima
-					$contaPergunta	=	1; // faz a contagem
+						$pergunta 	= "select * from pergunta where id_cat='$idCategoria'"; //comando para pegar as perguntas
+						$retornapergunta	=	mysqli_query($conexao, $pergunta); //executa o comando acima
+						$contaPergunta	=	1; // faz a contagem
 
 					while($retornaP = mysqli_fetch_array($retornapergunta)){ //loop para pegar os dados das perguntas
 						$idPergunta	=	$retornaP['Id_pergunta'];// add na variavel o id q vem do banco (pergunta)
@@ -98,43 +121,49 @@
 
 		</form>
 	</div>
+	<br><br><br>
+	<div style="clear: both;"></div>
 
- <br><br><br>
-<div style="clear: both;"></div>
+	<div class="container-fluid" style="width: 100%; bottom: 0; position: relative;">
+	 <footer class=" cyan darken-3">
 
-<div class="container-fluid" style="width: 100%; bottom: 0; position: relative;">
- <footer class=" cyan darken-3">
+	    <div class="container">
+	    
+	    <div class="row">
 
-    <div class="container">
-    
-    <div class="row">
+	      <div class="col l6 s12">
+	         <h5 class="white-text">Ftceiraidade Itabuna-Ba</h5>
+	         <p class="grey-text text-lighten-4"></p>
+	      </div>
 
-      <div class="col l6 s12">
-         <h5 class="white-text">Ftceiraidade Itabuna-Ba</h5>
-         <p class="grey-text text-lighten-4"></p>
-      </div>
+	      <div class="col l4 offset-l2 s12">
+	        <ul>
+	            <li><a class="grey-text text-lighten-3" href="painel.php">Inicio</a></li>
+	            <li><a class="grey-text text-lighten-3" href="#">Começar Teste</a></li>
+	            <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
+	            <li><a class="grey-text text-lighten-3" href="#!">Sair</a></li>
+	        </ul>
+	      </div>
 
-      <div class="col l4 offset-l2 s12">
-        <ul>
-            <li><a class="grey-text text-lighten-3" href="painel.php">Inicio</a></li>
-            <li><a class="grey-text text-lighten-3" href="#">Começar Teste</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Sobre</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Sair</a></li>
-        </ul>
-      </div>
+	    </div>
 
-    </div>
+	</div>
 
-</div>
-
-  <div class="footer-copyright white-text">
-            <div class="container">
-            © 2019 Todos os direitos reservados
-            </div>
-  </div>
+	  <div class="footer-copyright white-text">
+	            <div class="container">
+	            © 2019 Todos os direitos reservados
+	            </div>
+	  </div>
  
  </footer>
 </div>
+<?php
+	}
+?>
+		
+
+
+ 
 
 
 </body>

@@ -24,11 +24,15 @@
   	<?php 
   		$emailLogado = $_SESSION["email"];
   		$aula = mysqli_query($conexao,"select aula FROM aluno WHERE nome='$emailLogado' ");
+
   		while($retornaAula	=	mysqli_fetch_array($aula)){
   			$auxAula = $retornaAula['aula'];
   		}
+
   	 ?>
+
     <a href=<?php echo "perguntas.php?aula=".$auxAula ?> class="waves-effect waves-light btn">Exercício</a>
+    
   </center>
     
 </div>
