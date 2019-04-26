@@ -1,48 +1,65 @@
-<?php
-	
-	include('base.html');
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset= "UTF-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</head>
+<body class=" teal darken-1">
 
-
-?>
-<div class="container">
-		<div class="row">
-			
-		</div>
-		<div class="row">
-			<div class="col s4">
-			</div>
-			<div class="col s4">
-				<img class="responsive-img" src="imagens/logo_ftc_idoso.jpg">
-			</div>
-			<div class="col s4">
-			
-			</div>
-		</div>
-		<form class="col s12" action="userauthenitcation.php" method="POST"> 
-			<div class="row">
-        	<div class="input-field col s12" required>
-        		<input placeholder="Login" id="first_name" name="email" type="text" class="validate" required="">
-        	</div>
-        	</div>
-        	<div class="row">
-        	<div class="input-field col s12" required>
-          		<input placeholder="Senha" id="password" name="senha" type="password" class="validate" required="">
-        	</div>
-        	</div>
-        	<div class="row">	
-        		<div class="col s4">
-        			<a class="modal-trigger" href="#cadastroModal"> Cadastre-se</a>
-        		</div>
-        		<div class="col s6">	
-        		</div>
-        		<div class="col ">
-        			<button class="waves-effect waves-indigo btn indigo lighten-1" type="submit" name="action">Entrar
-  					</button>
-        		</div>        		
-        	</div>
+<div class="row" style="padding-top: 100px;"></div>
+<div class="col"></div>
+<div class="container white" style="padding: 25px;">
+    <div class="row">
+    </div>
+    <div class="row">
+      <div class="col s4">
+      </div>
+      <div class="col s4">
+        <img class="responsive-img" src="imagens/logo_ftc_idoso.jpg">
+      </div>
+      <div class="col s4">
       
-		</form>
-  	</div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s2"></div>
+        <div class="col s8">
+              <form class="col s12" action="userauthenitcation.php" method="POST" style="padding:25px;"> 
+                <div class="row">
+                    <div class="input-field col s12" required>
+                      <input placeholder="Login" id="first_name" name="email" type="text" class="validate" required="">
+                    </div>
+                    </div>
+                    <div class="row">
+                    <div class="input-field col s12" required>
+                        <input placeholder="Senha" id="password" name="senha" type="password" class="validate" required="">
+                    </div>
+                    </div>
+                    <div class="row"> 
+                      <div class="col s4">
+                        <a class="modal-trigger" href="#cadastroModal"> Cadastre-se</a>
+                      </div>
+                      <div class="col s4">  
+                      </div>
+                      <div class="col ">
+                        <button class="waves-effect waves-indigo btn indigo lighten-1" type="submit" name="action">Entrar
+                      </button>
+                      </div>            
+                    </div>
+                
+              </form>
+        </div>
+        <div class="col s2"></div>
+    </div>
+  </div>
 
 <div class="container">
 
@@ -97,3 +114,6 @@ $(document).ready(function(){
     $('.modal').modal();
   })
 </script>
+
+</body>
+</html>
