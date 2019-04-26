@@ -5,7 +5,7 @@
 
 		<div class="row">
 		</div>
-		<div class="container">
+		<div class="container" style="padding: 25px;">
 			<span>Perguntas cadastradas</span>		
 		</div>
 		<?php
