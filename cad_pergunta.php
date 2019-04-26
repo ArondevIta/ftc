@@ -123,13 +123,12 @@ if(empty($pergunta) || empty($opt1) || empty($opt2) || empty($opt3) || empty($op
 
 	}
 
+	echo "<META HTTP-EQUIV=REFRESH CONTENT = '0; URL=cadastrar_Perguntas.php'>
+			<script type=\"text/javascript\">
+				alert(\"pergunta cadastrada com sucesso \")
+			</script>";
 		?>
-		  <div class="alert alert-success" style="width: 600px; margin-left: 400px;">
-		    <strong>Successo!</strong> Pergunta cadastrada com sucesso.
-		  </div>
-		<script type="text/javascript">
-	  		setTimeout("window.location='cadastrar_Perguntas.php'",2000);
-	  	</script>
+
   <?php
 
 }
