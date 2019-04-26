@@ -16,7 +16,7 @@
 
 <div class="row" style="padding-top: 100px;"></div>
 <div class="col"></div>
-<div class="container white" style="padding: 25px;">
+<div class="container white z-depth-5" style="padding: 25px;">
     <div class="row">
     </div>
     <div class="row">
