@@ -27,7 +27,9 @@ $(document).ready(function() {
 </script>
 
 <?php include('menu_professor.php'); ?>
-
+<div class="row">
+  
+</div>
 <div class="container" style="padding: 25px;">
 <h5 >Digite sua pergunta</h5>
 
