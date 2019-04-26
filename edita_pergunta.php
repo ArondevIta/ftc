@@ -47,7 +47,8 @@ if(isset($_GET['id']) && ($_GET['id']<>"" || $_GET['id']<>null)){ //se existir o
 				$cont+=1;
 			}
 ?>
-<div class="container" style="padding:50px;">
+<div class="row"></div>
+<div class="container" style="padding:25px;">
 <!--	<section id="sessao">
 	<form name="updatePergunta" method="post" action="atualizarPergunta.php">
 		<input type="hidden" name="id" value="<?php echo $perguntaIDBanco;?>">
